@@ -20,7 +20,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="0dp"
-            app:srcCompat="@drawable/nha_hidrata_logo" />
+            app:srcCompat="@drawable/nha_hidrata_Log" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
@@ -189,7 +189,7 @@
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:padding="8dp"
-                    android:src="@drawable/icone_historico"
+                    android:src="@drawable/icone_historicos"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
@@ -247,7 +247,7 @@
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:padding="8dp"
-                    android:src="@drawable/icone_alerta"
+                    android:src="@drawable/icone_alertas"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
