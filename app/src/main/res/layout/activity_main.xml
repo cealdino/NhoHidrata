@@ -341,6 +341,12 @@
             android:backgroundTint="#00897B"
             android:text="HISTÓRICO" />
 
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/icone_perfil" />
+
     </LinearLayout>
 
 </RelativeLayout>
