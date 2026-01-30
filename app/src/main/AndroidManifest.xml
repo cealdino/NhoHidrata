@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".PerfilActivities"
+            android:exported="false" />
+        <activity
             android:name=".Tela_Abertura"
             android:exported="false" />
         <activity

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".Tela_Abertura">
 
-    <!-- IMAGEM DE FUNDO -->
+    <
 
     <ImageView
         android:id="@+id/fundoTelaInicial"
