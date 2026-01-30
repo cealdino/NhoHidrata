@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Nhohidrata</string>
+    <string name="btn_comecar">Começar</string>
+    <string name="img_abertura">Imagem de abertura do app</string>
+    <string-array name="qtd_agua">
+        <item>150 ml</item>
+        <item>200ml</item>
+        <item>250 ml</item>
+        <item>500 ml</item>
+    </string-array>
 </resources>

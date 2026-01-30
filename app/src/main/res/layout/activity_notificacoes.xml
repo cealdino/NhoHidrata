@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
     android:gravity="center"
-    android:background="#E3F2FD">
+    android:background="@drawable/fundo_nha_hidrata"
+    android:padding="20dp">
 
     <TextView
         android:layout_width="wrap_content"
