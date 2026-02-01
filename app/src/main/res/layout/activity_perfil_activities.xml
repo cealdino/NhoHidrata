@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ingestAgua"
+    android:id="@+id/rootPerfil"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fundo_nha_hidrata"
@@ -11,14 +11,14 @@
     <ImageView
         android:id="@+id/logo_perfil"
         android:layout_width="180dp"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
+        android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.029"
-        app:srcCompat="@drawable/nha_hidrata_Log" />
+        app:layout_constraintVertical_bias="0.011" />
 
     <ImageView
         android:id="@+id/perfilImg"
@@ -41,22 +41,25 @@
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintHorizontal_bias="0.439"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo_perfil"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/ajustar_meta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="104dp"
         android:text="Ajuste a sua meta diária de água"
         android:textColor="#0288D1"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -65,50 +68,56 @@
         android:orientation="horizontal"
         android:padding="8dp"
         android:weightSum="3"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-15dp"
-        tools:layout_editor_absoluteY="238dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481">
 
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardFrio"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
-            app:cardBackgroundColor="@android:color/transparent"
+            app:cardBackgroundColor="#E3F2FD"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardTempFrio"
                 android:layout_width="128dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_card_menu"
-                android:padding="12dp">
+                android:layout_height="123dp"
+                android:padding="12dp"
+                android:textAlignment="center">
 
                 <ImageView
                     android:id="@+id/iconFrio"
                     android:layout_width="78dp"
                     android:layout_height="40dp"
-                    android:layout_marginTop="4dp"
                     android:src="@drawable/cold"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.777"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.067"
                     app:tint="#2A8CFF" />
 
                 <TextView
                     android:id="@+id/txtFrio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginTop="5dp"
                     android:text="Frio"
                     android:textColor="#0288D1"
-                    android:textSize="18sp"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.506"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/iconFrio" />
 
@@ -116,12 +125,17 @@
                     android:id="@+id/gelo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
                     android:text="&lt; 20°c"
                     android:textColor="#0288D1"
                     android:textSize="14sp"
                     android:textStyle="bold"
-                    tools:layout_editor_absoluteX="26dp"
-                    tools:layout_editor_absoluteY="76dp" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/iconFrio"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.85" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -135,14 +149,15 @@
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
-            app:cardBackgroundColor="@android:color/transparent"
+            app:cardBackgroundColor="#E3F2FD"
+
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardTempMod"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:background="@drawable/bg_card_menu"
                 android:padding="12dp">
 
                 <ImageView
@@ -155,12 +170,13 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/txtModerado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:text="Moderado"
                     android:textColor="#0288D1"
-                    android:textSize="18sp"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -182,7 +198,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- CARD ALERTAS -->
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardQuente"
             android:layout_width="0dp"
@@ -191,14 +207,14 @@
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
-            app:cardBackgroundColor="@android:color/transparent"
+            app:cardBackgroundColor="#E3F2FD"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardTempQuente"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:background="@drawable/bg_card_menu"
                 android:padding="12dp">
 
                 <ImageView
@@ -211,13 +227,13 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/txtQuente"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:text="Quente"
                     android:textColor="#0288D1"
-                    android:textSize="18sp"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -242,18 +258,18 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/fatores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="167dp"
         android:text="Esses fatores influenciam tua necessidade diária de água"
+        android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="15sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/ajustar_meta"
+        app:layout_constraintVertical_bias="0.398" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -262,25 +278,30 @@
         android:orientation="horizontal"
         android:padding="8dp"
         android:weightSum="3"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="445dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.754">
 
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardParado"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
-            app:cardBackgroundColor="@android:color/transparent"
+            app:cardBackgroundColor="#E3F2FD"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardSedentario"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:background="@drawable/bg_card_menu"
                 android:padding="12dp">
 
                 <ImageView
@@ -289,11 +310,11 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="4dp"
                     android:src="@drawable/sedentario"
-                    app:tint="#2A8CFF"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.777"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#2A8CFF" />
 
                 <TextView
                     android:id="@+id/txtSedentario"
@@ -302,7 +323,7 @@
                     android:layout_marginTop="6dp"
                     android:text="Sedentário"
                     android:textColor="#0288D1"
-                    android:textSize="18sp"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -313,21 +334,21 @@
 
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardLeve"
+            android:id="@+id/cardAtLeve"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
-            app:cardBackgroundColor="@android:color/transparent"
+            app:cardBackgroundColor="#E3F2FD"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardLeve"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:background="@drawable/bg_card_menu"
                 android:padding="12dp">
 
                 <ImageView
@@ -348,7 +369,7 @@
                     android:text="Atividade Leve"
                     android:textAlignment="center"
                     android:textColor="#0288D1"
-                    android:textSize="18sp"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -368,14 +389,14 @@
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
-            app:cardBackgroundColor="@android:color/transparent"
+            app:cardBackgroundColor="#E3F2FD"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardPesado"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:background="@drawable/bg_card_menu"
                 android:padding="12dp">
 
                 <ImageView
@@ -396,7 +417,7 @@
                     android:text="Atividade Intensa"
                     android:textAlignment="center"
                     android:textColor="#0288D1"
-                    android:textSize="18sp"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -412,7 +433,7 @@
         android:id="@+id/gravarQtdAgua"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="80dp"
         android:backgroundTint="#0288D1"
 
         android:text="Guardar"
@@ -426,7 +447,7 @@
         android:id="@+id/infoMeta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Meta Ajustada automaticamente"
+        android:text=""
         android:textColor="#0288D1"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/gravarQtdAgua"
@@ -442,7 +463,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="41dp"
         android:layout_marginBottom="11dp"
-        android:text="0 Lt por dia"
         android:textColor="#0288D1"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/gravarQtdAgua"
@@ -458,26 +478,48 @@
         android:ems="10"
         android:hint="Digite seu Peso"
         android:inputType="number"
+        android:textColor="#3F51B5"
+        android:textColorHint="#00BCD4"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.96" />
+        app:layout_constraintVertical_bias="0.785" />
 
     <EditText
         android:id="@+id/minhaIdade"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="184dp"
         android:ems="10"
         android:hint="Digite sua idade"
         android:inputType="number"
         android:singleLine="true"
+        android:textColor="#3F51B5"
+        android:textColorHint="#00BCD4"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.265" />
+
+    <Button
+        android:id="@+id/btnVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="53dp"
+        android:backgroundTint="#0288D1"
+        android:text="Voltar"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/ajustar_meta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.166" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

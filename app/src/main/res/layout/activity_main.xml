@@ -13,6 +13,7 @@
         android:gravity="center"
         android:orientation="vertical">
 
+
         <ImageView
             android:id="@+id/logo_tela_principal"
             android:layout_width="120dp"
@@ -20,7 +21,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="0dp"
-            app:srcCompat="@drawable/nha_hidrata_Log" />
+            android:src="@drawable/logo" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
@@ -43,7 +44,7 @@
 
             <com.google.android.material.progressindicator.CircularProgressIndicator
                 android:id="@+id/metaAtingida"
-                android:layout_width="180dp"
+                android:layout_width="220dp"
                 android:layout_height="180dp"
 
                 app:indicatorColor="#2A8CFF"
@@ -60,8 +61,7 @@
 
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
-                app:max="2500"
-                app:progress="0"
+
                 app:trackColor="#BFE6FF"
                 app:trackThickness="14dp" />
 
@@ -101,8 +101,8 @@
             android:layout_marginBottom="20dp"
             android:backgroundTint="#2A8CFF"
             android:shape="ring"
-            android:text="Beber Agua" />
-
+            android:text="Beber Agua"
+            android:textColor="#FFFFFF" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -111,14 +111,13 @@
             android:clickable="true"
             android:focusable="true"
             app:cardCornerRadius="16dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="@android:color/transparent">
+            app:cardElevation="4dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:background="@drawable/bg_card_menu"
-                android:padding="16dp">
+                android:padding="10dp">
 
                 <!-- Ícone -->
                 <ImageView
@@ -190,19 +189,19 @@
                     android:layout_height="70dp"
                     android:padding="8dp"
                     android:src="@drawable/icone_historicos"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:orientation="vertical"
-                    app:layout_constraintStart_toEndOf="@id/iconHistorico"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iconHistorico"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
                         android:id="@+id/txtHistoricoTitle"
@@ -211,7 +210,7 @@
                         android:text="Histórico"
                         android:textColor="#0288D1"
                         android:textSize="18sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/txtHistoricoSub"
@@ -219,7 +218,7 @@
                         android:layout_height="wrap_content"
                         android:text="Consumo de dias passados"
                         android:textColor="#4FC3F7"
-                        android:textSize="15sp"/>
+                        android:textSize="15sp" />
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -248,19 +247,19 @@
                     android:layout_height="70dp"
                     android:padding="8dp"
                     android:src="@drawable/icone_alertas"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:orientation="vertical"
-                    app:layout_constraintStart_toEndOf="@id/iconAlertas"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iconAlertas"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
                         android:id="@+id/txtAlertasTitle"
@@ -269,7 +268,7 @@
                         android:text="Alertas"
                         android:textColor="#0288D1"
                         android:textSize="18sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/txtAlertasSub"
@@ -277,76 +276,11 @@
                         android:layout_height="wrap_content"
                         android:text="Ativação e personalização"
                         android:textColor="#4FC3F7"
-                        android:textSize="15sp"/>
+                        android:textSize="15sp" />
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
-
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btn500"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:backgroundTint="#0097A7"
-                android:text="500ml" />
-
-            <Button
-                android:id="@+id/btn1L"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:backgroundTint="#0097A7"
-                android:text="1L" />
-
-            <Button
-                android:id="@+id/btn15L"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:backgroundTint="#0097A7"
-                android:text="1.5L" />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btnPerfil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:backgroundTint="#00897B"
-            android:text="MEU PERFIL" />
-
-        <Button
-            android:id="@+id/btnNotificacoes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:backgroundTint="#00897B"
-            android:text="LEMBRETES" />
-
-        <Button
-            android:id="@+id/btnHistorico"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#00897B"
-            android:text="HISTÓRICO" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/icone_perfil" />
-
     </LinearLayout>
 
 </RelativeLayout>
