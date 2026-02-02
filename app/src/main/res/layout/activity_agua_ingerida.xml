@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootIngestAgua"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo_nha_hidrata"
+    android:padding="20dp">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardIngestaoAgua"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginBottom="172dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="24sp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+
+
+            <TextView
+                android:id="@+id/tituloIngestao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adicionar tua ingestão de água"
+                android:textAlignment="center"
+                android:textColor="#0288D1"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+            <Spinner
+                android:id="@+id/spinner_agua"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#2196F3"
+                android:popupBackground="@android:color/white"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tituloIngestao" />
+
+
+            <Button
+                android:id="@+id/adicionar_qtd_agua"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#2196F3"
+                android:text="Adicionar"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spinner_agua" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
