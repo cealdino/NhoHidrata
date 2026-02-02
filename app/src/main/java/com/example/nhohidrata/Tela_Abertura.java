@@ -19,7 +19,7 @@ public class Tela_Abertura extends AppCompatActivity {
 
         Button btnComecar = findViewById(R.id.btnComecar);
         btnComecar.setOnClickListener(v -> {
-            Intent intent = new Intent(this,  agua_ingerida.class);
+            Intent intent = new Intent(this,  MainActivity.class);
             startActivity(intent);
         });
     }

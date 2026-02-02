@@ -18,6 +18,7 @@ public class PerfilActivities extends AppCompatActivity {
     private TextView txtPesado; // controlo das cores de texto
     private EditText etPeso, etIdade;
     private TextView infoQtdDiaria;
+
     private SharedPreferences prefs;
 
     private String climaSelecionado = "";
@@ -32,6 +33,7 @@ public class PerfilActivities extends AppCompatActivity {
         etPeso = findViewById(R.id.meuPeso);
         etIdade = findViewById(R.id.minhaIdade);
         infoQtdDiaria = findViewById(R.id.infoMeta);
+
         Button btnGuardar = findViewById(R.id.gravarQtdAgua);
         Button btnVoltar = findViewById(R.id.btnVoltar);
 
@@ -119,6 +121,7 @@ public class PerfilActivities extends AppCompatActivity {
             prefs.edit().putInt("meta", meta).apply();
 
             infoQtdDiaria.setText( "Meta ajustada automaticamente "+ meta + " ml por dia");
+
         });
 
         btnVoltar.setOnClickListener(v -> finish());
