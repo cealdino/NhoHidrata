@@ -15,13 +15,13 @@ public class Alarme extends BroadcastReceiver {
         NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         String canalId = "nho_hidrata_canal";
 
-        // Criar o canal para Android 8.0 ou superior
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(canalId, "Lembretes de Água", NotificationManager.IMPORTANCE_HIGH);
             manager.createNotificationChannel(channel);
         }
 
-        // O que acontece quando clicas na notificação (abre a app)
+
         Intent i = new Intent(context, MainActivity.class);
         PendingIntent pi = PendingIntent.getActivity(context, 0, i, PendingIntent.FLAG_IMMUTABLE);
 

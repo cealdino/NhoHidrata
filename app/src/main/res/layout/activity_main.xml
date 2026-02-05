@@ -1,314 +1,288 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fundo_nha_hidrata"
-    android:padding="20dp">
+    tools:context=".teste">
 
-    <LinearLayout
+    <Button
+        android:id="@+id/btnSimularHora"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#2A8CFF"
+
+        android:text="Simular Hora"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/voltarInicio"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#2A8CFF"
+        android:text="Voltar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo_tela_principal"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgGotaAgua"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="41dp"
+        android:src="@drawable/gota_agua"
+        app:tint="#2A8CFF"
+        app:layout_constraintEnd_toEndOf="@+id/metaAtingida"
+        app:layout_constraintStart_toStartOf="@+id/metaAtingida"
+        app:layout_constraintTop_toTopOf="@+id/metaAtingida" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/metaAtingida"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:max="100"
+        app:indicatorColor="#2A8CFF"
+        app:indicatorInset="0dp"
+        app:indicatorSize="170dp"
+        app:indicatorTrackGapSize="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_tela_principal"
+        app:trackColor="#BFE6FF"
+        app:trackThickness="14dp" />
+
+    <TextView
+        android:id="@+id/metaParaAtingir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="0.0 L"
+        android:textColor="#1F2937"
+        android:textSize="14sp"
+
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/metaAtingida"
+        app:layout_constraintStart_toStartOf="@+id/metaAtingida"
+        app:layout_constraintTop_toBottomOf="@+id/imgGotaAgua" />
+
+    <TextView
+        android:id="@+id/aguaIngerida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="0 ml ingeridos"
+        android:textColor="#6B7280"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/metaAtingida"
+        app:layout_constraintStart_toStartOf="@+id/metaAtingida"
+        app:layout_constraintTop_toBottomOf="@+id/metaParaAtingir" />
+
+    <Button
+        android:id="@+id/btnBeberAgua"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#2A8CFF"
+        android:shape="ring"
+        android:text="Beber Agua"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/metaAtingida" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardPerfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBeberAgua">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp">
-
-            <Button
-                android:id="@+id/btnSimularHora"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#2A8CFF"
-                android:text="Simular Hora"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <ImageView
-            android:id="@+id/logo_tela_principal"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="0dp"
-            android:src="@drawable/logo" />
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp">
-
+            android:background="@drawable/bg_card_menu"
+            android:padding="16dp">
 
             <ImageView
-                android:id="@+id/imgGotaAgua"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/gota_agua"
-
-                android:tint="#2A8CFF"
-                app:layout_constraintEnd_toEndOf="@id/metaAtingida"
-                app:layout_constraintStart_toStartOf="@id/metaAtingida"
-                app:layout_constraintTop_toTopOf="@id/metaAtingida" />
-
-
-            <com.google.android.material.progressindicator.CircularProgressIndicator
-                android:id="@+id/metaAtingida"
-                android:layout_width="300dp"
-                android:layout_height="180dp"
-                android:max="100"
-
-                app:indicatorColor="#2A8CFF"
-                app:indicatorInset="0dp"
-
-                app:indicatorSize="130dp"
-                app:indicatorTrackGapSize="0dp"
-
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-
-                app:layout_constraintHorizontal_bias="0.0"
+                android:id="@+id/iconPerfil"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/icone_perfil"
+                app:tint="#2A8CFF"
                 app:layout_constraintStart_toStartOf="parent"
-
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0"
-
-                app:trackColor="#BFE6FF"
-                app:trackThickness="14dp" />
+                app:layout_constraintBottom_toBottomOf="parent" />
 
             <TextView
-                android:id="@+id/metaParaAtingir"
+                android:id="@+id/txtPerfilTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0.0 L"
-                android:textColor="#1F2937"
-                android:textSize="14sp"
+                android:layout_marginStart="16dp"
+                android:text="Perfil"
+                android:textColor="#0288D1"
+                android:textSize="18sp"
                 android:textStyle="bold"
-
-                app:layout_constraintBottom_toBottomOf="@id/metaAtingida"
-                app:layout_constraintEnd_toEndOf="@id/metaAtingida"
-                app:layout_constraintStart_toStartOf="@id/metaAtingida"
-                app:layout_constraintTop_toTopOf="@id/metaAtingida" />
+                app:layout_constraintStart_toEndOf="@+id/iconPerfil"
+                app:layout_constraintTop_toTopOf="@+id/iconPerfil" />
 
             <TextView
-                android:id="@+id/aguaIngerida"
+                android:id="@+id/txtPerfilSub"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0 ml ingeridos"
-                android:textColor="#6B7280"
-                android:textSize="14sp"
-
-                app:layout_constraintEnd_toEndOf="@id/metaAtingida"
-                app:layout_constraintStart_toStartOf="@id/metaAtingida"
-                app:layout_constraintTop_toBottomOf="@id/metaParaAtingir" />
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:text="Peso, idade e meta diária"
+                android:textColor="#4FC3F7"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/iconPerfil"
+                app:layout_constraintTop_toBottomOf="@+id/txtPerfilTitle" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 
-        <Button
-            android:id="@+id/btnBeberAgua"
-            android:layout_width="150dp"
-            android:layout_height="80dp"
-            android:layout_marginBottom="20dp"
-            android:backgroundTint="#2A8CFF"
-            android:shape="ring"
-            android:text="Beber Agua"
-            android:textColor="#FFFFFF" />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardHistorico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardPerfil">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardPerfil"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="4dp">
+            android:background="@drawable/bg_card_menu"
+            android:padding="16dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:background="@drawable/bg_card_menu"
-                android:padding="10dp">
+            <ImageView
+                android:id="@+id/iconHistorico"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/icone_historicos"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
 
-                <!-- Ícone -->
-                <ImageView
-                    android:id="@+id/icon"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:padding="8dp"
-                    android:src="@drawable/icone_perfil"
-                    android:tint="#2A8CFF"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/txtHistoricoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Histórico"
+                android:textColor="#0288D1"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/iconHistorico"
+                app:layout_constraintTop_toTopOf="@+id/iconHistorico" />
 
+            <TextView
+                android:id="@+id/txtHistoricoSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:text="Consumo de dias"
+                android:textColor="#4FC3F7"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/iconHistorico"
+                app:layout_constraintTop_toBottomOf="@+id/txtHistoricoTitle" />
 
-                <LinearLayout
-                    android:id="@+id/textContainer"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/icon"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:id="@+id/tltPerfil"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Perfil"
-                        android:textColor="#0288D1"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/subtitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Peso, idade e meta diária"
-                        android:textColor="#4FC3F7"
-                        android:textSize="15sp" />
-
-                </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardAlertas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardHistorico">
 
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardHistorico"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardBackgroundColor="@android:color/transparent"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="4dp">
+            android:background="@drawable/bg_card_menu"
+            android:padding="16dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/containerHistorico"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:background="@drawable/bg_card_menu"
-                android:padding="16dp">
+            <ImageView
+                android:id="@+id/iconAlertas"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/icone_alertas"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
 
-                <ImageView
-                    android:id="@+id/iconHistorico"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:padding="8dp"
-                    android:src="@drawable/icone_historicos"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/txtAlertasTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Alertas"
+                android:textColor="#0288D1"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/iconAlertas"
+                app:layout_constraintTop_toTopOf="@+id/iconAlertas" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/iconHistorico"
-                    app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/txtAlertasSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:text="Ativação e personalização"
+                android:textColor="#4FC3F7"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/iconAlertas"
+                app:layout_constraintTop_toBottomOf="@+id/txtAlertasTitle" />
 
-                    <TextView
-                        android:id="@+id/txtHistoricoTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Histórico"
-                        android:textColor="#0288D1"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
-                    <TextView
-                        android:id="@+id/txtHistoricoSub"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Consumo de dias passados"
-                        android:textColor="#4FC3F7"
-                        android:textSize="15sp" />
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardAlertas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardBackgroundColor="@android:color/transparent"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="4dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/containerAlerta"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:background="@drawable/bg_card_menu"
-                android:padding="16dp">
-
-                <ImageView
-                    android:id="@+id/iconAlertas"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:padding="8dp"
-                    android:src="@drawable/icone_alertas"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/iconAlertas"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:id="@+id/txtAlertasTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Alertas"
-                        android:textColor="#0288D1"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/txtAlertasSub"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Ativação e personalização"
-                        android:textColor="#4FC3F7"
-                        android:textSize="15sp" />
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-
-    </LinearLayout>
-
-</RelativeLayout>
-
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,10 @@
 package com.example.nhohidrata;
 
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -7,10 +12,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
+
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,19 +32,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         metaParaAtingir = findViewById(R.id.metaParaAtingir);
         aguaIngerida = findViewById(R.id.aguaIngerida);
         progressHidratacao = findViewById(R.id.metaAtingida);
 
         Button btnBeberAgua = findViewById(R.id.btnBeberAgua);
         Button btnSimularHora = findViewById(R.id.btnSimularHora);
+        Button voltarInicio = findViewById(R.id.voltarInicio);
+        voltarInicio.setOnClickListener(v -> finish());
+
 
         MaterialCardView cardPerfil = findViewById(R.id.cardPerfil);
         MaterialCardView cardHistorico = findViewById(R.id.cardHistorico);
         MaterialCardView cardAlerta = findViewById(R.id.cardAlertas);
 
         btnBeberAgua.setOnClickListener(v ->
-                startActivity(new Intent(this, agua_ingerida.class)));
+                startActivity(new Intent(this, agua_ingerida.class))
+
+                //mostrarOpcaoHorarios()
+
+        );
+
+
 
         cardPerfil.setOnClickListener(v ->
                 startActivity(new Intent(this, PerfilActivities.class)));
@@ -161,5 +179,10 @@ public class MainActivity extends AppCompatActivity {
             progressHidratacao.setProgress(0);
         }
     }
+
+
+
+
+
 }
 

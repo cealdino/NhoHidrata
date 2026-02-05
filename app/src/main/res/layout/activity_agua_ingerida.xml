@@ -9,73 +9,121 @@
     android:background="@drawable/fundo_nha_hidrata"
     android:padding="20dp">
 
+    <Button
+        android:id="@+id/voltarPerfil"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+
+        android:backgroundTint="#2A8CFF"
+        android:text="Voltar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardIngestaoAgua"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginBottom="172dp"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="24sp"
         app:cardElevation="8dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="24dp">
-
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:padding="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <TextView
-                android:id="@+id/tituloIngestao"
+                android:id="@+id/tuaIngestao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Adicionar tua ingestão de água"
                 android:textAlignment="center"
                 android:textColor="#0288D1"
-                android:textSize="28sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/spinner_agua"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
-
-            <Spinner
-                android:id="@+id/spinner_agua"
-                android:layout_width="match_parent"
-                android:layout_height="82dp"
-                android:layout_marginTop="16dp"
+            <Button
+                android:id="@+id/qtd1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
                 android:backgroundTint="#2196F3"
-                android:popupBackground="@android:color/white"
-                android:spinnerMode="dropdown"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:tag="150"
+                android:text="150 ml"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/qtd4"
+                app:layout_constraintEnd_toStartOf="@+id/qtd3"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tituloIngestao" />
-
+                app:layout_constraintTop_toBottomOf="@+id/tuaIngestao" />
 
             <Button
-                android:id="@+id/adicionar_qtd_agua"
+                android:id="@+id/qtd2"
                 android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:layout_marginTop="24dp"
+                android:layout_height="50dp"
                 android:backgroundTint="#2196F3"
-                android:text="Adicionar"
+                android:tag="200"
+                android:text="200 ml"
+                android:textAllCaps="false"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/qtd3" />
+
+            <Button
+                android:id="@+id/qtd3"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:backgroundTint="#2196F3"
+                android:tag="250"
+                android:text="250 ml"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+
+                app:layout_constraintBottom_toTopOf="@+id/qtd2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tuaIngestao"
+                app:layout_constraintVertical_bias="0.555" />
+
+            <Button
+                android:id="@+id/qtd4"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="#2196F3"
+                android:tag="500"
+                android:text="500 ml"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/qtd2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/spinner_agua" />
+                app:layout_constraintTop_toBottomOf="@+id/qtd1" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
