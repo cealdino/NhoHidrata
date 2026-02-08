@@ -48,13 +48,13 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="39dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="41dp"
         android:src="@drawable/gota_agua"
-        app:tint="#2A8CFF"
         app:layout_constraintEnd_toEndOf="@+id/metaAtingida"
         app:layout_constraintStart_toStartOf="@+id/metaAtingida"
-        app:layout_constraintTop_toTopOf="@+id/metaAtingida" />
+        app:layout_constraintTop_toTopOf="@+id/metaAtingida"
+        app:tint="#2A8CFF" />
 
     <com.google.android.material.progressindicator.CircularProgressIndicator
         android:id="@+id/metaAtingida"

@@ -1,47 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/fundo_nha_hidrata"
     android:padding="20dp">
 
     <Button
-        android:id="@+id/btnVoltarHist"
-        android:layout_width="110dp"
+        android:id="@+id/btnLimparHist"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="#2A8CFF"
+        android:text="Limpar"
+        app:layout_constraintEnd_toStartOf="@+id/btnVoltarHist"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        android:layout_marginEnd="16dp"
+    <Button
+        android:id="@+id/btnVoltarHist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:backgroundTint="#2A8CFF"
         android:text="Voltar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnLimparHist"
         app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:id="@+id/historicoHidratcao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Histórico de Hidratação"
-        android:textColor="#0288D1"
-        android:textSize="30sp"
-        android:textStyle="bold" />
 
-
-    <ListView
-        android:id="@+id/lvHistorico"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="#BDBDBD"
-        android:dividerHeight="1dp" >
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLimparHist">
 
+        <TextView
+            android:id="@+id/historicoHidratcao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:text="Histórico de Hidratação"
+            android:textColor="#0288D1"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-    </ListView>
-    <Button
-        android:id="@+id/btnVoltarHist"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="VOLTAR" />
+        <ListView
+            android:id="@+id/lvHistorico"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#BDBDBD"
+            android:dividerHeight="1dp" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tvHistoricoVazio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Ainda não tens consumos registados."
+            android:textSize="16sp"
+            android:textColor="#757575"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

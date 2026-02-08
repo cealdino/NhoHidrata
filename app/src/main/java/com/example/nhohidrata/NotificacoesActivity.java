@@ -4,6 +4,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class NotificacoesActivity extends AppCompatActivity {
 
     private Spinner spinner;
+    private SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +23,16 @@ public class NotificacoesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notificacoes);
 
         spinner = findViewById(R.id.spinnerIntervalo);
+        prefs = getSharedPreferences("DadosUsuario", MODE_PRIVATE);
         Button btnAtivar = findViewById(R.id.btnLembrar);
+        Button irParaBeberAgua = findViewById(R.id.irParaBeberAgua);
+        Button voltar  = findViewById(R.id.voltarMain);
+        voltar.setOnClickListener(v -> finish());
+
+        irParaBeberAgua.setOnClickListener(v -> {
+            Intent intent = new Intent(this, agua_ingerida.class);
+            startActivity(intent);
+        });
 
 
         String[] opcoes = {"1 minuto (Teste)", "1 hora", "2 horas", "3 horas"};
@@ -29,7 +40,7 @@ public class NotificacoesActivity extends AppCompatActivity {
         spinner.setAdapter(adapter);
 
         btnAtivar.setOnClickListener(v -> {
-           // configurarAlarme();
+            configurarAlarme();
         });
     }
 
@@ -57,7 +68,7 @@ public class NotificacoesActivity extends AppCompatActivity {
                     tempoMillis,
                     pendingIntent
             );
-
+            prefs.edit().putBoolean("lembrete_ativo", true).apply();
             Toast.makeText(this, "Lembrete definido: " + selecionado, Toast.LENGTH_LONG).show();
         }
     }

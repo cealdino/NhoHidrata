@@ -13,14 +13,12 @@
         android:id="@+id/voltarPerfil"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
-
         android:backgroundTint="#2A8CFF"
         android:text="Voltar"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardIngestaoAgua"
@@ -36,14 +34,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
-            android:padding="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
 
             <TextView
                 android:id="@+id/tuaIngestao"
@@ -62,6 +56,7 @@
                 android:id="@+id/qtd1"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
                 android:backgroundTint="#2196F3"
                 android:tag="150"
@@ -70,30 +65,16 @@
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/qtd4"
                 app:layout_constraintEnd_toStartOf="@+id/qtd3"
+                app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tuaIngestao" />
-
-            <Button
-                android:id="@+id/qtd2"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:backgroundTint="#2196F3"
-                android:tag="200"
-                android:text="200 ml"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/qtd3" />
 
             <Button
                 android:id="@+id/qtd3"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:layout_marginTop="24dp"
                 android:backgroundTint="#2196F3"
                 android:tag="250"
                 android:text="250 ml"
@@ -101,16 +82,15 @@
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold"
-
-                app:layout_constraintBottom_toTopOf="@+id/qtd2"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tuaIngestao"
-                app:layout_constraintVertical_bias="0.555" />
+                app:layout_constraintStart_toEndOf="@+id/qtd1"
+                app:layout_constraintTop_toBottomOf="@+id/tuaIngestao" />
 
             <Button
                 android:id="@+id/qtd4"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:backgroundTint="#2196F3"
                 android:tag="500"
@@ -119,15 +99,97 @@
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/qtd2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/qtd1" />
 
+            <Button
+                android:id="@+id/qtd2"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#2196F3"
+                android:tag="200"
+                android:text="200 ml"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/qtd4"
+                app:layout_constraintTop_toBottomOf="@+id/qtd3" />
+
+            <Button
+                android:id="@+id/confirmar"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#2196F3"
+                android:text="Confirmar"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/qtd2" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardDicaLembrete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="#E3F2FD"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:layout_constraintTop_toBottomOf="@id/confirmar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="💡 Queres receber alertas para não esquecer de beber água?"
+                        android:textColor="#0288D1"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnRejeitarDica"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Agora não"
+                            android:textColor="#757575" />
+
+                        <Button
+                            android:id="@+id/btnIrParaAlertas"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Configurar"
+                            android:textColor="#2A8CFF"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.cardview.widget.CardView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 

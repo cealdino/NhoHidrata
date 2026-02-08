@@ -14,8 +14,8 @@ import com.google.android.material.card.MaterialCardView;
 
 
 public class PerfilActivities extends AppCompatActivity {
-    private static final int COR_BASE = 0xFFE3F2FD; //controlo cor do card
-    private TextView txtPesado; // controlo das cores de texto
+    private static final int COR_BASE = 0xFFE3F2FD;
+    private TextView txtPesado;
     private EditText etPeso, etIdade;
     private TextView infoQtdDiaria;
 
@@ -104,6 +104,7 @@ public class PerfilActivities extends AppCompatActivity {
             int idade = Integer.parseInt(etIdade.getText().toString());
 
             int mlPorQuilo;
+
             if (idade <= 30) mlPorQuilo = 40;
             else if (idade <= 55) mlPorQuilo = 35;
             else if (idade <= 65) mlPorQuilo = 30;
